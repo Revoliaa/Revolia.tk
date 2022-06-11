@@ -1,0 +1,500 @@
+/*----------Colors----------*/
+/*
+Main: #007EF5
+Background: #474a48
+Scrollbar: #042f70
+DarkGray: #1E1F1E
+LightGray: #3d424a
+*/
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+    background-color: #474a48;
+}
+
+h2 {
+    color: #007EF5;
+    font-size: 40px;
+    margin-top: -200px;
+    margin-bottom: 10px;
+}
+
+/*----------Scrollbar----------*/
+html {
+    scrollbar-width: 10px;
+    scrollbar-color: #042f70 #1E1F1E;
+}
+
+html::-webkit-scrollbar {
+    width: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #042f70;
+}
+
+html::-webkit-scrollbar-track {
+    background: #1E1F1E;
+}
+
+#projects .project-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+#projects .project-container::-webkit-scrollbar-thumb {
+    background: #042f70;
+}
+
+#projects .project-container::-webkit-scrollbar-track {
+    background: #1E1F1E;
+}
+/*----------Scrollbar----------*/
+/*----------Navbar----------*/
+.navbar {
+    background-color: #1E1F1E;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    align-items: center;
+}
+
+.navbar a {
+    padding: 0 3px;
+    position: relative;
+    text-decoration: none;
+    color: #007EF5;
+    transition: all 0.2s;
+}
+
+.navbar h1 {
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.navbar-items ul {
+    display: flex;
+    gap: 50px;
+}
+
+.navbar-items li {
+    cursor: pointer;
+    list-style: none;
+    font-size: 20px;
+}
+
+.navbar ul li a:after {
+    transition: all 0.3s linear;
+
+    content: "";
+    position: absolute;
+    background-color: #007EF5;
+    height: 3px;
+    width: 0;
+    left: 0;
+    bottom: -5px;
+}
+
+.navbar ul li a:hover:after {
+    width: 100%;
+}
+
+.burger-menu-container {
+    display: none;
+    cursor: pointer;
+}
+
+.burger-menu {
+    background-color: white;
+    width: 30px;
+    height: 5px;
+    margin-bottom: 5px;
+    border-radius: 20px;
+    transition: all 0.2s linear;
+}
+
+.navbar-responsive {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+
+.burger-menu[x1] {
+    margin-top: 10px;
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+.burger-menu[x2] {
+    margin-top: 10px;
+    transform: rotate(315deg);
+}
+
+.burger-menu[x3] {
+    visibility: hidden;
+}
+/*----------Navbar----------*/
+/*----------About Me----------*/
+#aboutme {
+    width: 100%;
+    height: 798px;
+    background-image: url(assets/scene.jpg);
+    background-size: cover;
+    background-position: center top;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-break: normal;
+}
+
+#aboutme .introduction-bg {
+    top: 475px;
+    width: 100%;
+    height: 400px;
+    background: #474a48;
+    position: absolute;
+}
+
+#aboutme .introduction {
+    margin: 0px 30px;
+    max-width: 960px;
+    width: 100%;
+    height: 400px;
+    background: #1E1F1E;
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 30px solid transparent;
+    box-sizing: border-box;
+}
+
+.introduction .left {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.introduction .left img {
+    width: 100%;
+}
+
+.introduction .right {
+    width: 60%;
+    height: 100%;
+    Color: white;
+}
+
+.introduction .right h3 {
+    font-size: 30px;
+    margin: 20px;
+}
+
+.introduction .right span {
+    color: #007EF5;
+}
+
+.introduction .right hr {
+    width: 95%;
+}
+
+.introduction .right p {
+    margin: 25px 20px;
+    font-size: 20px;
+}
+
+.accounts {
+    align-self: flex-end;
+    position: absolute;
+    margin: 125px 30px;
+    max-width: 960px;
+    width: calc(100% - 60px);
+    height: 75px;
+    background-color: #007EF5;
+    text-align: center;
+}
+
+.accounts img {
+    margin-top: 17.5px;
+    margin-right: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.accounts img:hover {
+    transform: scale(1.2);
+}
+/*----------About Me----------*/
+/*----------Projects----------*/
+#projects {
+    width: 100%;
+    height: 1100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#projects .project-container {
+    max-width: 1280px;
+    width: calc(100% - 60px);
+    max-height: 800px;
+    height: 100%;
+    background-color: #1E1F1E;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    overflow-y: auto;
+}
+
+.project {
+    max-width: 500px;
+    width: 100%;
+    max-height: 200px;
+    height: 100%;
+    margin: 30px 20px;
+    background-color: #3d424a;
+    color: white;
+}
+
+.project h3 {
+    font-size: 25px;
+    margin-left: 20px;
+    text-align: center;
+}
+
+.project p {
+    font-size: 20px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    line-height: 1.5em;
+    hyphens: auto;
+}
+
+.project a {
+    font-size: 20px;
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.project a:hover {
+    color: #007EF5;
+}
+/*----------Projects----------*/
+/*----------Contact----------*/
+#contact {
+    width: 100%;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#contact .contact-form-container {
+    width: 100%;
+    max-height: 650px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #007EF5;
+}
+
+form {
+    max-width: 800px;
+    width: calc(100% - 60px);
+    max-height: 550px;
+    height: 100%;
+    background-color: #1E1F1E;
+    color: white;
+}
+
+.form-name,
+.form-email,
+.form-topic,
+.form-message {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-size: 25px;
+    margin: 25px 50px;
+}
+
+input {
+    max-width: 360px;
+    width: 100%;
+    height: 25px;
+    border: 5px solid gray;
+    outline: none;
+}
+
+textarea {
+    max-width: 740px;
+    width: 100%;
+    height: 120px;
+    border: 5px solid gray;
+    outline: none;
+    resize: none;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    font-size:18px;
+}
+
+button {
+    height: 48px;
+    width: 120px;
+    font-size: 25px;
+    background-color: white;
+    border: none;
+    transition: all 0.5s;
+    margin: 0px 50px;
+}
+
+button:hover {
+    background-color: #007EF5;
+    color: white;
+}
+/*----------Contact----------*/
+/*----------Footer----------*/
+.footer {
+    width: 100%;
+    height: fit-content;
+    background-color: #1E1F1E;
+    text-align: center;
+    font-size: 18px;
+}
+
+.footer p {
+    margin:0;
+    padding: 15px 0px;
+    color: white;
+}
+
+.footer a {
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s;
+}
+
+.footer a:hover {
+    color: #007EF5;
+}
+/*----------Footer----------*/
+/*----------Media Queries----------*/
+@media screen and (max-width: 768px) {
+    h2 {
+        margin-top: 75px;
+    }
+
+    .ct-header {
+        margin-top: 0px;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+    
+    .navbar-items ul {
+        display: none;
+        position: absolute;
+        z-index: 1;
+        background-color: #1E1F1E;
+        margin: -1px -50%;
+        width: 100%;
+    }
+
+    .navbar-items li:first-child {
+        padding-top: 20px;
+    }    
+
+    .navbar-items li:last-child {
+        padding-bottom: 20px;
+    }
+
+    .burger-menu-container {
+        position: absolute;
+        display: block;
+        top: 25px;
+        right: 25px;
+    }
+
+    #aboutme .introduction {
+        min-width: 300px;
+        width: max-content;
+        height: fit-content;
+        flex-direction: column;
+    }
+
+    .introduction .left img {
+        max-width: 240px;
+        min-width: 200px;
+    } 
+
+    .introduction .right p {
+        margin: 10px -30px;
+    }
+
+    .introduction .right hr {
+        width: 130%;
+        margin-left: -35px
+    }
+    
+    .accounts {
+        min-width: 300px;
+        max-width: 414px;
+        min-height: 75px;
+        height: max-content;
+        top: 670px;
+        background-color: #007EF5;
+    }
+
+    .accounts img {
+        margin-left: 5px;
+        margin-bottom: 15px;
+    }
+
+    #projects .project-container {
+        min-width: 300px;
+    }
+
+    #contact .contact-form-container {
+        min-width: 300px;
+    }
+
+    #contact {
+        height: 800px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .navbar-responsive {
+        flex-direction: row;
+    }
+    
+}
+
+@media screen and (max-width: 520px) {
+    .project {
+        max-height: 225px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .project {
+        max-height: 250px;
+    }
+}
+/*----------Media Queries----------*/
