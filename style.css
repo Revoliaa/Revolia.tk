@@ -1,10 +1,10 @@
 /*----------Colors----------*/
 /*
-Main: #007EF5
-Background: #474a48
+Background: #303434
+DarkGray: #202324
+LightGray: #36383e
 Scrollbar: #042f70
-DarkGray: #1E1F1E
-LightGray: #3d424a
+Main: #007EF5
 */
 
 body {
@@ -12,20 +12,13 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: monospace;
-    background-color: #474a48;
-}
-
-h2 {
-    color: #007EF5;
-    font-size: 40px;
-    margin-top: -200px;
-    margin-bottom: 10px;
+    background-color: #303434;
 }
 
 /*----------Scrollbar----------*/
 html {
     scrollbar-width: 10px;
-    scrollbar-color: #042f70 #1E1F1E;
+    scrollbar-color: #042f70 #202324;
 }
 
 html::-webkit-scrollbar {
@@ -37,7 +30,7 @@ html::-webkit-scrollbar-thumb {
 }
 
 html::-webkit-scrollbar-track {
-    background: #1E1F1E;
+    background: #202324;
 }
 
 #projects .project-container::-webkit-scrollbar {
@@ -49,12 +42,12 @@ html::-webkit-scrollbar-track {
 }
 
 #projects .project-container::-webkit-scrollbar-track {
-    background: #1E1F1E;
+    background: #202324;
 }
 /*----------Scrollbar----------*/
 /*----------Navbar----------*/
 .navbar {
-    background-color: #1E1F1E;
+    background-color: #202324;
     display: flex;
     justify-content: space-around;
     color: white;
@@ -141,21 +134,32 @@ html::-webkit-scrollbar-track {
 #aboutme {
     width: 100%;
     height: 798px;
-    background-image: url(assets/scene.jpg);
-    background-size: cover;
-    background-position: center top;
     display: flex;
     align-items: center;
     justify-content: center;
     line-break: normal;
 }
 
+#aboutme::after {
+    content: "";
+    width: 100%;
+    height: 798px;
+    background-image: url(assets/scene.jpg);
+    background-size: cover;
+    background-position: center top;
+    filter: grayscale(80%);
+    position: absolute;
+    z-index: 0;
+    
+}
+
 #aboutme .introduction-bg {
     top: 475px;
     width: 100%;
     height: 400px;
-    background: #474a48;
+    background: #303434;
     position: absolute;
+    z-index: 1;
 }
 
 #aboutme .introduction {
@@ -163,12 +167,13 @@ html::-webkit-scrollbar-track {
     max-width: 960px;
     width: 100%;
     height: 400px;
-    background: #1E1F1E;
+    background: #202324;
     position: relative;
     display: flex;
     align-items: center;
     border: 30px solid transparent;
     box-sizing: border-box;
+    z-index: 1;
 }
 
 .introduction .left {
@@ -216,6 +221,7 @@ html::-webkit-scrollbar-track {
     height: 75px;
     background-color: #007EF5;
     text-align: center;
+    z-index: 1;
 }
 
 .accounts img {
@@ -235,11 +241,17 @@ html::-webkit-scrollbar-track {
 /*----------Projects----------*/
 #projects {
     width: 100%;
-    height: 1100px;
+    height: 900px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+h2 {
+    color: #007EF5;
+    font-size: 40px;
+    margin-bottom: 10px;
 }
 
 #projects .project-container {
@@ -247,7 +259,7 @@ html::-webkit-scrollbar-track {
     width: calc(100% - 60px);
     max-height: 800px;
     height: 100%;
-    background-color: #1E1F1E;
+    background-color: #202324;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -260,7 +272,7 @@ html::-webkit-scrollbar-track {
     max-height: 200px;
     height: 100%;
     margin: 30px 20px;
-    background-color: #3d424a;
+    background-color: #36383e;
     color: white;
 }
 
@@ -315,7 +327,7 @@ form {
     width: calc(100% - 60px);
     max-height: 550px;
     height: 100%;
-    background-color: #1E1F1E;
+    background-color: #202324;
     color: white;
 }
 
@@ -361,7 +373,6 @@ button {
     border: none;
     transition: all 0.5s;
     margin: 0px 50px;
-    cursor: pointer;
 }
 
 button:hover {
@@ -373,7 +384,7 @@ button:hover {
 .footer {
     width: 100%;
     height: fit-content;
-    background-color: #1E1F1E;
+    background-color: #202324;
     text-align: center;
     font-size: 18px;
 }
@@ -397,7 +408,7 @@ button:hover {
 /*----------Media Queries----------*/
 @media screen and (max-width: 768px) {
     h2 {
-        margin-top: 75px;
+        margin-top: 100px;
     }
 
     .ct-header {
@@ -411,8 +422,8 @@ button:hover {
     .navbar-items ul {
         display: none;
         position: absolute;
-        z-index: 1;
-        background-color: #1E1F1E;
+        z-index: 2;
+        background-color: #202324;
         margin: -1px -50%;
         width: 100%;
     }
@@ -467,16 +478,24 @@ button:hover {
         margin-bottom: 15px;
     }
 
+    #projects {
+        height: 990px;
+    }
+
     #projects .project-container {
         min-width: 300px;
+    }
+    
+    #contact {
+        height: 800px;
     }
 
     #contact .contact-form-container {
         min-width: 300px;
     }
 
-    #contact {
-        height: 800px;
+    .footer {
+        margin-top: -50px;
     }
 }
 
