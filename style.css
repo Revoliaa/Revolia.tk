@@ -22,8 +22,23 @@ h2 {
     margin-bottom: 10px;
 }
 
+.goTopButton {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 1;
+    border: 2px solid black;
+    outline: none;
+    background-color: #007EF5;
+    cursor: pointer;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+}
+
 /*----------Scrollbar----------*/
 html {
+    scroll-behavior: smooth;
     scrollbar-width: 10px;
     scrollbar-color: #042f70 #1E1F1E;
 }
@@ -353,7 +368,7 @@ textarea {
     font-size:18px;
 }
 
-button {
+.contact-button {
     height: 48px;
     width: 120px;
     font-size: 25px;
@@ -361,9 +376,10 @@ button {
     border: none;
     transition: all 0.5s;
     margin: 0px 50px;
+    cursor: pointer;
 }
 
-button:hover {
+.contact-button:hover {
     background-color: #007EF5;
     color: white;
 }
