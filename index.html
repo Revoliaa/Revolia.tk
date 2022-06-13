@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="assets/logo.png" type="image/x-icon">
     <title>Revolia | Jr. Front-End Developer</title>
+    <!--Font Awesome-->
+    <script src="https://kit.fontawesome.com/e5f8948288.js" crossorigin="anonymous"></script>
+    <!--Font Awesome-->
 </head>
 <body>
     <div class="navbar">
@@ -19,6 +22,14 @@
                 <li><a href="#aboutme" onclick="closeNavbar()">About Me</a></li>
                 <li><a href="#projects" onclick="closeNavbar()">Projects</a></li>
                 <li><a href="#contact" onclick="closeNavbar()">Contact</a></li>
+                <div class="theme">
+                    <input type="checkbox" class="checkbox" id="checkbox">
+                    <label for="checkbox" class="theme-label">
+                        <i class="fa-solid fa-moon"></i>
+                        <i class="fa-solid fa-sun"></i>
+                        <div class="theme-ball"></div>
+                    </label>
+                </div>
             </ul>
             <div class="burger-menu-container" onclick="toggleNavbar()">
                 <div class="burger-menu"></div>
@@ -44,14 +55,14 @@
             </div>
         </div>
         <div class="accounts">
-            <a href="https://github.com/Revoliaa" target="_blank"><img src="assets/github.png" alt="github"></a>
-            <a href="https://steamcommunity.com/id/revolia" target="_blank"><img src="assets/steam.png" alt="github"></a>
-            <a href="https://discord.com/users/546190684097347586" target="_blank"><img src="assets/discord.png" alt="github"></a>
-            <a href="https://www.youtube.com/channel/UCriGgqSeFK7UbvAV04WXaVw" target="_blank"><img src="assets/youtube.png" alt="github"></a>
-            <a href="https://www.twitch.tv/rev0lia" target="_blank"><img src="assets/twitch.png" alt="github"></a>
-            <a href="https://open.spotify.com/user/uict8eznusqtlxfafq8miyvb4" target="_blank"><img src="assets/spotify.png" alt="github"></a>
-            <a href="https://twitter.com/Rev0lia" target="_blank"><img src="assets/twitter.png" alt="github"></a>
-            <a href="https://www.reddit.com/user/Rev0lia" target="_blank"><img src="assets/reddit.png" alt="github"></a>
+            <a href="https://github.com/Revoliaa" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://steamcommunity.com/id/revolia" target="_blank"><i class="fa-brands fa-steam"></i></a>
+            <a href="https://discord.com/users/546190684097347586" target="_blank"><i class="fa-brands fa-discord"></i></a>
+            <a href="https://www.youtube.com/channel/UCriGgqSeFK7UbvAV04WXaVw" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.twitch.tv/rev0lia" target="_blank"><i class="fa-brands fa-twitch"></i></a>
+            <a href="https://open.spotify.com/user/uict8eznusqtlxfafq8miyvb4" target="_blank"><i class="fa-brands fa-spotify"></i></a>
+            <a href="https://twitter.com/Rev0lia" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+            <a href="https://www.reddit.com/user/Rev0lia" target="_blank"><i class="fa-brands fa-reddit"></i></a>
         </div>
     </div>
     <div id="projects">
@@ -89,13 +100,13 @@
         <div class="contact-form-container">
             <form action="https://formspree.io/f/mwkyznea" method="POST">
                 <div class="form-name">
-                    <input type="text" name="senderName" id="senderName" placeholder="Name">
+                    <input class="contact-input" type="text" name="senderName" id="senderName" placeholder="Name">
                 </div>
                 <div class="form-email">
-                    <input type="email" name="senderEmail" id="senderEmail" placeholder="E-Mail">
+                    <input class="contact-input" type="email" name="senderEmail" id="senderEmail" placeholder="E-Mail">
                 </div>                    
                 <div class="form-topic">
-                    <input type="text" name="senderTopic" id="senderTopic" placeholder="Topic">
+                    <input class="contact-input" type="text" name="senderTopic" id="senderTopic" placeholder="Topic">
                 </div>
                 <div class="form-message">
                     <textarea name="senderMessage" id="senderMessage" cols="50" rows="7" placeholder="Message"></textarea>
