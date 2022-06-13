@@ -226,8 +226,8 @@ html::-webkit-scrollbar-track {
     transition: all 0.3s;
     background-color: white;
     border: 1px solid #007EF5;
-    outline: 1px solid #007EF5;
     outline-offset: -2px;
+    outline: 5px solid #007EF5;
     border-radius: 50%;
 }
 
