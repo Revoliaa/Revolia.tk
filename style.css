@@ -261,6 +261,7 @@ h2 {
     flex-wrap: wrap;
     justify-content: space-evenly;
     overflow-y: auto;
+    min-width: 280px;
 }
 
 .project {
@@ -312,6 +313,7 @@ h2 {
 #contact .contact-form-container {
     width: 100%;
     max-height: 650px;
+    min-width: 280px;
     height: 100%;
     display: flex;
     align-items: center;
@@ -321,6 +323,8 @@ h2 {
 
 form {
     max-width: 800px;
+    min-width: 280px;
+    margin: 0 30px;
     width: calc(100% - 60px);
     max-height: 550px;
     height: 100%;
@@ -336,7 +340,7 @@ form {
     flex-direction: column;
     text-align: left;
     font-size: 25px;
-    margin: 25px 50px;
+    margin: 40px;
 }
 
 input {
@@ -369,7 +373,7 @@ button {
     background-color: white;
     border: none;
     transition: all 0.5s;
-    margin: 0px 50px;
+    margin: 0px 40px;
 }
 
 button:hover {
@@ -441,7 +445,7 @@ button:hover {
     }
 
     #aboutme .introduction {
-        min-width: 300px;
+        min-width: 280px;
         width: max-content;
         height: fit-content;
         flex-direction: column;
@@ -466,7 +470,7 @@ button:hover {
     }
     
     .accounts {
-        min-width: 300px;
+        min-width: 280px;
         max-width: 373px;
         min-height: 75px;
         height: max-content;
@@ -482,17 +486,9 @@ button:hover {
     #projects {
         height: 990px;
     }
-
-    #projects .project-container {
-        min-width: 300px;
-    }
     
     #contact {
         height: 800px;
-    }
-
-    #contact .contact-form-container {
-        min-width: 300px;
     }
 
     .footer {
@@ -508,14 +504,85 @@ button:hover {
 }
 
 @media screen and (max-width: 530px) {
-    .project {
-        max-height: 225px;
+    .introduction .right h3 {
+        font-size: 25px;
+    }
+    
+    .introduction .right span::first-of-type {
+        font-size: 25px;
+    }
+    
+    .introduction .right :not(span::first-of-type),
+    .introduction .right p {
+        font-size: 17px;
+    }
+
+    .accounts {
+        max-width: 340px;
+        top: 660px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    .project h3 {
+        font-size: 22px;
+    }
+
+    .project p,
+    .project a {
+        font-size: 18px;
+    }
+
+    .form-name,
+    .form-email,
+    .form-topic,
+    .form-message {
+        margin: 30px;
+    }
+
+    #contact {
+        height: 650px;
+    }    
+
+    #contact .contact-form-container {
+        max-height: 550px;
+    }
+
+    form {
+        height: 500px;
+    }
+
+    textarea {
+        max-width: 400px;
+        width: 100%;
+        margin-right: -20px
+    }
+
+    input {
+        max-width: 400px;
+    }
+
+    button {
+        height: 40px;
+        width: 100px;
+        font-size: 20px;
+        margin: 10px 30px;
+    }
+
+    .footer {
+        margin-top: -30px;
+    }
+
+    .footer p {
+        font-size: 15px;
     }
 }
 
 @media screen and (max-width: 410px) {
     .project {
-        max-height: 250px;
+        max-height: 215px;
     }
 }
 /*----------Media Queries----------*/
