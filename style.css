@@ -222,13 +222,13 @@ html::-webkit-scrollbar-track {
 }
 
 .accounts img {
-    margin-top: 17.5px;
-    margin-right: 10px;
-    width: 40px;
-    height: 40px;
-    background-color: white;
-    border-radius: 50%;
+    margin: 21.5px 10px;
     transition: all 0.3s;
+    background-color: white;
+    border: 1px solid #007EF5;
+    outline: 1px solid #007EF5;
+    outline-offset: -2px;
+    border-radius: 50%;
 }
 
 .accounts img:hover {
