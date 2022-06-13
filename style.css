@@ -1,24 +1,52 @@
-/*----------Colors----------*/
-/*
-Background: #303434
-DarkGray: #202324
-LightGray: #36383e
-Scrollbar: #042f70
-Main: #007EF5
-*/
+:root {
+    --background: #303434;
+    --dark-gray: #202324;
+    --light-gray: #36383e;
+    --scrollbar: #042f70;
+    --primary: #007EF5;
+    --text: #FFFFFF;
+    --shadow: rgba(0, 0, 0, 1);
+}
+
+/*-----Color Changes For System Mode-----*/
+@media(prefers-color-scheme: light) {
+    :root {
+        --background: #efefef;
+        --dark-gray: white;
+        --light-gray: #e9ecef;
+        --scrollbar: #042f70;
+        --primary: #007EF5;
+        --text: #000;
+        --shadow: rgba(255, 255, 255, 1);
+    }
+}
+
+@media(prefers-color-scheme: dark) {
+    :root {
+        --background: #303434;
+        --dark-gray: #202324;
+        --light-gray: #36383e;
+        --scrollbar: #042f70;
+        --primary: #007EF5;
+        --text: #FFFFFF;
+        --shadow: rgba(0, 0, 0, 1);
+    }
+}
+/*-----Color Changes For System Mode-----*/
 
 body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: monospace;
-    background-color: #303434;
+    background-color: var(--background);
+    transition: background-color 0.3s;
 }
 
 /*----------Scrollbar----------*/
 html {
     scrollbar-width: 10px;
-    scrollbar-color: #042f70 #202324;
+    scrollbar-color: var(--scrollbar) var(--dark-gray);
 }
 
 html::-webkit-scrollbar {
@@ -26,11 +54,11 @@ html::-webkit-scrollbar {
 }
 
 html::-webkit-scrollbar-thumb {
-    background: #042f70;
+    background: var(--scrollbar);
 }
 
 html::-webkit-scrollbar-track {
-    background: #202324;
+    background: var(--dark-gray);
 }
 
 #projects .project-container::-webkit-scrollbar {
@@ -38,27 +66,28 @@ html::-webkit-scrollbar-track {
 }
 
 #projects .project-container::-webkit-scrollbar-thumb {
-    background: #042f70;
+    background: var(--scrollbar);
 }
 
 #projects .project-container::-webkit-scrollbar-track {
-    background: #202324;
+    background: var(--dark-gray);
 }
 /*----------Scrollbar----------*/
 /*----------Navbar----------*/
 .navbar {
-    background-color: #202324;
+    background-color: var(--dark-gray);
     display: flex;
     justify-content: space-around;
-    color: white;
+    color: var(--text);
     align-items: center;
+    transition: background-color 0.3s;
 }
 
 .navbar a {
     padding: 0 3px;
     position: relative;
     text-decoration: none;
-    color: #007EF5;
+    color: var(--primary);
     transition: all 0.2s;
 }
 
@@ -70,6 +99,7 @@ html::-webkit-scrollbar-track {
 .navbar-items ul {
     display: flex;
     gap: 50px;
+    align-items: center;
 }
 
 .navbar-items li {
@@ -80,10 +110,9 @@ html::-webkit-scrollbar-track {
 
 .navbar ul li a:after {
     transition: all 0.3s linear;
-
     content: "";
     position: absolute;
-    background-color: #007EF5;
+    background-color: var(--primary);
     height: 3px;
     width: 0;
     left: 0;
@@ -94,13 +123,55 @@ html::-webkit-scrollbar-track {
     width: 100%;
 }
 
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.theme-responsive {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
+.theme-label {
+    width: 50px;
+    height: 18px;
+    border-radius: 50px;
+    background-color: var(--background);
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.theme-label > i {
+    font-size: 16px;
+    cursor: pointer;
+    color: orange;
+}
+
+.theme-ball {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: var(--dark-gray);
+    position: absolute;
+    transition: transform 0.2s ease-out;
+}
+
+.checkbox:checked + .theme-label > .theme-ball {
+    transform: translateX(30px);
+}
+
 .burger-menu-container {
     display: none;
     cursor: pointer;
 }
 
 .burger-menu {
-    background-color: white;
+    background-color: var(--text);
     width: 30px;
     height: 5px;
     margin-bottom: 5px;
@@ -157,9 +228,10 @@ html::-webkit-scrollbar-track {
     top: 475px;
     width: 100%;
     height: 400px;
-    background: #303434;
+    background: var(--background);
     position: absolute;
     z-index: 1;
+    transition: background-color 0.3s;
 }
 
 #aboutme .introduction {
@@ -167,13 +239,15 @@ html::-webkit-scrollbar-track {
     max-width: 960px;
     width: 100%;
     height: 400px;
-    background: #202324;
+    background: var(--dark-gray);
     position: relative;
     display: flex;
     align-items: center;
     border: 30px solid transparent;
     box-sizing: border-box;
     z-index: 1;
+    box-shadow: 0px 0px 10px var(--shadow);
+    transition: background-color 0.3s;
 }
 
 .introduction .left {
@@ -192,7 +266,7 @@ html::-webkit-scrollbar-track {
 .introduction .right {
     width: 60%;
     height: 100%;
-    Color: white;
+    Color: var(--text);
 }
 
 .introduction .right h3 {
@@ -201,7 +275,7 @@ html::-webkit-scrollbar-track {
 }
 
 .introduction .right span {
-    color: #007EF5;
+    color: var(--primary);
 }
 
 .introduction .right p {
@@ -216,22 +290,20 @@ html::-webkit-scrollbar-track {
     max-width: 960px;
     width: calc(100% - 60px);
     height: 75px;
-    background-color: #007EF5;
+    background-color: var(--primary);
     text-align: center;
     z-index: 1;
+    box-shadow: 0px 0px 10px var(--shadow);
 }
 
-.accounts img {
-    margin: 21.5px 10px;
-    transition: all 0.3s;
-    background-color: white;
-    border: 1px solid #007EF5;
-    outline-offset: -2px;
-    outline: 5px solid #007EF5;
-    border-radius: 50%;
+.accounts i {
+    font-size: 28px;
+    color: var(--dark-gray);
+    margin: 23.5px 14px;
+    transition: transform 0.2s;
 }
 
-.accounts img:hover {
+.accounts i:hover {
     transform: scale(1.2);
 }
 /*----------About Me----------*/
@@ -246,7 +318,7 @@ html::-webkit-scrollbar-track {
 }
 
 h2 {
-    color: #007EF5;
+    color: var(--primary);
     font-size: 40px;
     margin-bottom: 10px;
 }
@@ -256,12 +328,13 @@ h2 {
     width: calc(100% - 60px);
     max-height: 800px;
     height: 100%;
-    background-color: #202324;
+    background-color: var(--dark-gray);
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     overflow-y: auto;
     min-width: 280px;
+    transition: background-color 0.3s;
 }
 
 .project {
@@ -270,8 +343,9 @@ h2 {
     max-height: 200px;
     height: 100%;
     margin: 30px 20px;
-    background-color: #36383e;
-    color: white;
+    background-color: var(--light-gray);
+    color: var(--text);
+    transition: background-color 0.3s;
 }
 
 .project h3 {
@@ -291,13 +365,13 @@ h2 {
 .project a {
     font-size: 20px;
     margin-left: 20px;
-    color: white;
+    color: var(--text);
     text-decoration: none;
-    transition: all 0.3s;
+    transition: color 0.3s;
 }
 
 .project a:hover {
-    color: #007EF5;
+    color: var(--primary);
 }
 /*----------Projects----------*/
 /*----------Contact----------*/
@@ -318,7 +392,7 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #007EF5;
+    background-color: var(--primary);
 }
 
 form {
@@ -328,8 +402,9 @@ form {
     width: calc(100% - 60px);
     max-height: 550px;
     height: 100%;
-    background-color: #202324;
-    color: white;
+    background-color: var(--dark-gray);
+    color: var(--text);
+    transition: background-color 0.3s;
 }
 
 .form-name,
@@ -343,11 +418,11 @@ form {
     margin: 40px;
 }
 
-input {
+.contact-input {
     max-width: 360px;
     width: 100%;
     height: 25px;
-    border: 5px solid gray;
+    border: 5px solid var(--primary);
     outline: none;
 }
 
@@ -355,7 +430,7 @@ textarea {
     max-width: 740px;
     width: 100%;
     height: 120px;
-    border: 5px solid gray;
+    border: 5px solid var(--primary);
     outline: none;
     resize: none;
 }
@@ -370,40 +445,38 @@ button {
     height: 48px;
     width: 120px;
     font-size: 25px;
-    background-color: white;
+    background-color: var(--primary); /*I know color name isn't correct but it's better for buttons appearance*/
+    color: var(--text);
     border: none;
     transition: all 0.5s;
     margin: 0px 40px;
-}
-
-button:hover {
-    background-color: #007EF5;
-    color: white;
+    cursor: pointer;
 }
 /*----------Contact----------*/
 /*----------Footer----------*/
 .footer {
     width: 100%;
     height: fit-content;
-    background-color: #202324;
+    background-color: var(--dark-gray);
     text-align: center;
     font-size: 18px;
+    transition: background-color 0.3s;
 }
 
 .footer p {
     margin:0;
     padding: 15px 0px;
-    color: white;
+    color: var(--text);
 }
 
 .footer a {
     text-decoration: none;
-    color: white;
+    color: var(--text);
     transition: all 0.3s;
 }
 
 .footer a:hover {
-    color: #007EF5;
+    color: var(--primary);
 }
 /*----------Footer----------*/
 /*----------Media Queries----------*/
@@ -424,7 +497,7 @@ button:hover {
         display: none;
         position: absolute;
         z-index: 2;
-        background-color: #202324;
+        background-color: var(--dark-gray);
         margin: -1px -50%;
         width: 100%;
     }
@@ -433,7 +506,7 @@ button:hover {
         padding-top: 20px;
     }    
 
-    .navbar-items li:last-child {
+    .navbar-items li:nth-child(3) {
         padding-bottom: 20px;
     }
 
@@ -475,10 +548,10 @@ button:hover {
         min-height: 75px;
         height: max-content;
         top: 670px;
-        background-color: #007EF5;
+        background-color: var(--primary);
     }
 
-    .accounts img {
+    .accounts i {
         margin-left: 5px;
         margin-bottom: 15px;
     }
@@ -560,7 +633,7 @@ button:hover {
         margin-right: -20px
     }
 
-    input {
+    .contact-input {
         max-width: 400px;
     }
 
