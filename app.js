@@ -42,6 +42,8 @@ if (localStorage.getItem("theme") === "light") {
     root.style.setProperty("--dark-gray", "white");
     root.style.setProperty("--light-gray", "#e9ecef");
     root.style.setProperty("--text", "#000");
+    root.style.setProperty("--shadow", "rgba(255, 255, 255, 1)");
+    
     themeController.checked = true;
 }
 
