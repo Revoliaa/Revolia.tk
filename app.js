@@ -5,9 +5,16 @@ let bugerMenu = document.querySelector(".burger-menu-container");
 let burgerItem1 = document.getElementsByClassName("burger-menu")[0];
 let burgerItem2 = document.getElementsByClassName("burger-menu")[1];
 let burgerItem3 = document.getElementsByClassName("burger-menu")[2];
+
 let theme = document.getElementsByClassName("theme")[0];
 let themeController = document.getElementById("checkbox");
 let root = document.querySelector(":root");
+
+let contactName = document.getElementById("senderName");
+let contactEmail = document.getElementById("senderEmail");
+let contactSubject = document.getElementById("senderSubject");
+let contactMessage = document.getElementById("senderMessage");
+let textArea = document.getElementsByTagName("textarea")[0];
 /*-----Definitions-----*/
 /*-----Navbar-----*/
 function toggleNavbar() {
@@ -28,11 +35,26 @@ function closeNavbar() {
 /*-----Navbar-----*/
 /*-----Theme-----*/
 themeController.addEventListener("change", () => {
-    root.style.setProperty("--background", themeController.checked ? "#efefef" : "#303434");
-    root.style.setProperty("--dark-gray", themeController.checked ? "white" : "#202324");
-    root.style.setProperty("--light-gray", themeController.checked ? "#e9ecef" : "#36383e");
-    root.style.setProperty("--text", themeController.checked ? "#000" : "#FFFFFF");
-    root.style.setProperty("--shadow", themeController.checked ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)");
+    root.style.setProperty(
+        "--background",
+        themeController.checked ? "#efefef" : "#303434"
+    );
+    root.style.setProperty(
+        "--dark-gray",
+        themeController.checked ? "white" : "#202324"
+    );
+    root.style.setProperty(
+        "--light-gray",
+        themeController.checked ? "#e9ecef" : "#36383e"
+    );
+    root.style.setProperty(
+        "--text",
+        themeController.checked ? "#000" : "#FFFFFF"
+    );
+    root.style.setProperty(
+        "--shadow",
+        themeController.checked ? "rgba(255, 255, 255, 1)" : "rgba(0, 0, 0, 1)"
+    );
 
     localStorage.setItem("theme", themeController.checked ? "light" : "dark");
 });
@@ -43,7 +65,7 @@ if (localStorage.getItem("theme") === "light") {
     root.style.setProperty("--light-gray", "#e9ecef");
     root.style.setProperty("--text", "#000");
     root.style.setProperty("--shadow", "rgba(255, 255, 255, 1)");
-    
+
     themeController.checked = true;
 }
 
@@ -51,7 +73,7 @@ window.addEventListener("resize", () => {
     if (screen.width < 769) {
         theme.classList.add("theme-responsive");
     }
-    
+
     if (screen.width >= 769) {
         theme.classList.remove("theme-responsive");
     }
@@ -65,3 +87,44 @@ if (screen.width >= 769) {
     theme.classList.remove("theme-responsive");
 }
 /*-----Theme-----*/
+/*-----Contact-----*/
+contactName.addEventListener("input", () => {
+    let contactSpan = document.querySelector("#senderName ~ .contact-span");
+
+    if (contactName.value != "") {
+        contactSpan.style.top = "-35px";
+    } else {
+        contactSpan.style.top = "10.5px";
+    }
+});
+
+contactEmail.addEventListener("input", () => {
+    let contactSpan = document.querySelector("#senderEmail ~ .contact-span");
+
+    if (contactEmail.value != "") {
+        contactSpan.style.top = "-35px";
+    } else {
+        contactSpan.style.top = "10.5px";
+    }
+});
+
+contactSubject.addEventListener("input", () => {
+    let contactSpan = document.querySelector("#senderSubject ~ .contact-span");
+
+    if (contactSubject.value != "") {
+        contactSpan.style.top = "-35px";
+    } else {
+        contactSpan.style.top = "10.5px";
+    }
+});
+
+contactMessage.addEventListener("input", () => {
+    let contactSpan = document.querySelector("#senderMessage ~ .contact-span");
+
+    if (contactMessage.value != "") {
+        contactSpan.style.top = "-35px";
+    } else {
+        contactSpan.style.top = "10.5px";
+    }
+});
+/*-----Contact-----*/
