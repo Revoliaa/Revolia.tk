@@ -217,7 +217,7 @@ html::-webkit-scrollbar-track {
     height: 798px;
     background-image: url(assets/scene.jpg);
     background-size: cover;
-    background-position: center top;
+    background-position: top;
     filter: grayscale(80%);
     position: absolute;
     z-index: 0;
