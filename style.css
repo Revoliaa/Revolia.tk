@@ -45,6 +45,7 @@ body {
 
 /*----------Scrollbar----------*/
 html {
+    scroll-behavior: smooth;
     scrollbar-width: 10px;
     scrollbar-color: var(--scrollbar) var(--dark-gray);
 }
